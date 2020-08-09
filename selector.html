@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First child</title>
+</head>
+<body>
+
+  <div class="first-last-child">
+    <h1>Selector first-child</h1>
+    <ul>
+      <li>Item đầu tiên</li>
+      <li>Item thứ 2</li>
+      <li>Item thứ 3</li>
+      <li>Item thứ 4</li>
+      <li>Item cuối cùng</li>
+    </ul>
+  </div>
+
+  <div class="box-float">
+    <h1>Selector last-child</h1>
+    <ul>
+      <li>Item đầu tiên</li>
+      <li>Item thứ 2</li>
+      <li>Item thứ 3</li>
+      <li>Item thứ 4</li>
+      <li>Item cuối cùng</li>
+    </ul>
+  </div>
+</body>
+</html>
+
+<style>
+  .first-last-child ul li:first-child{
+    background: #ccc;
+  }
+  .first-last-child ul li:last-child{
+    background: #fce;
+  }
+
+  .box-float ul {
+    border: 1px solid rgb(42, 39, 39);
+    width: 540px;
+    height: 100px;
+    padding-left: 0;
+  }
+  .box-float ul li {
+    list-style-type: none;
+    float: left;
+    background: #fcfc;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+  }
+  .box-float ul li:last-child {
+    margin-right: 0;
+  }
+</style>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue 3 - Learn css</title>
+  <script src="https://unpkg.com/vue@next"></script>
+  <style>
+    .category {
+      border: 1px solid #ccc;
+      width: 430px;
+      height: 200px;
+      padding-left: 0;
+      background-color: #fcf;
+    }
+    .category .item {
+      list-style-type: none;
+      float: left;
+      text-align: center;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      width: 100px;
+      transition: all 0.4s linear;
+    }
+    .category .item:nth-child(2n):hover {
+      background-color: #f1f1f1;
+      cursor: pointer;
+    }
+    .category .item:nth-child(4n) {
+      margin-right: 0;
+    }
+  </style>
+  <style>
+    .rolling {
+      border: 1px solid #cecece;
+      width: 150px;
+      text-align: center;
+      position: relative;
+      animation: 5s infinite alternate;
+      animation-name: myAnimation;
+      /*-moz-animation: 5s;
+      -moz-animation-name: myAnimation;
+      -webkit-animation: 5s;
+      -webkit-animation-name: myAnimation;
+      -o-animation: 5s;
+      -o-animation-name: myAnimation; */
+    }
+    @keyframes myAnimation {
+      from {left: 0px;}
+      to {left: 400px;}
+    }
+
+    /* Hien thi cho Firefox */
+    /*@-moz-keyframes myAnimation {
+        from {left: 0px;}
+        to {left: 400px;}
+    }*/
+
+    /* Hien thi cho Safari and Chrome */
+    /*@-webkit-keyframes myAnimation {
+        from {left: 0px;}
+        to {left: 400px;}
+    }*/
+
+    /* Hien thi cho Opera */
+    /*@-o-keyframes myAnimation {
+        from {left: 0px;}
+        to {left: 400px;}
+    }*/
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>{{product}}</h1>
+
+    <h1 class="categories">
+      Category
+    </h1>
+      <ul class="category" >
+        <li v-for="(category, idx) in categories" class="item">{{category}}</li>
+      </ul>
+  </div>
+
+  <div id="appchild">
+    <h1 class="rolling">{{newProduct}}</h1>
+  </div>
+
+  <script src="./main.js"></script>
+
+  <script>
+    const mountApp = app.mount('#app')
+    const childApp = appChild.mount('#appchild')
+  </script>
+</body>
+</html>
